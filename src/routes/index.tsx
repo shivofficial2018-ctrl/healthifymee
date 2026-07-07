@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import appMockup from "@/assets/app-mockup.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -110,14 +109,67 @@ function Landing() {
             </div>
           </div>
 
-          <div className="relative">
-            <img
-              src={appMockup}
-              alt="Healthify app on a smartphone with meal tracking and AI coach chat"
-              width={1400}
-              height={1600}
-              className="mx-auto w-full max-w-md md:max-w-lg"
-            />
+          <div className="relative mx-auto w-full max-w-md">
+            {/* Chat bubbles */}
+            <div className="absolute -left-2 top-8 z-10 hidden rounded-2xl bg-white px-4 py-2.5 text-sm shadow-lg sm:flex items-center gap-2">
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-accent/20 text-accent">🥗</span>
+              Suggest low carbs lunch
+            </div>
+            <div className="absolute -right-2 top-32 z-10 hidden rounded-2xl bg-white px-4 py-2.5 text-sm shadow-lg sm:flex items-center gap-2">
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-secondary text-primary">🌙</span>
+              How to improve my sleep?
+            </div>
+            <div className="absolute -left-4 bottom-24 z-10 hidden rounded-2xl bg-white px-4 py-2.5 text-sm shadow-lg sm:flex items-center gap-2">
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-primary text-primary-foreground text-xs">✦</span>
+              How was my day today?
+            </div>
+
+            {/* Phone frame */}
+            <div className="relative mx-auto w-[280px] rounded-[2.5rem] border-[10px] border-ink bg-ink shadow-2xl md:w-[320px]">
+              <div className="absolute left-1/2 top-2 z-20 h-5 w-24 -translate-x-1/2 rounded-full bg-ink" />
+              <div className="overflow-hidden rounded-[1.75rem] bg-white">
+                {/* Meal photo */}
+                <div className="relative h-64 bg-gradient-to-br from-emerald-900 to-emerald-700">
+                  <div className="absolute inset-0 grid place-items-center text-8xl">🥗</div>
+                </div>
+                <div className="p-4">
+                  <div className="text-[13px] font-semibold text-ink leading-tight">
+                    Roasted pumpkin, quinoa, tomatoes & greens salad.
+                  </div>
+                  <div className="mt-1 text-xs text-muted-foreground">261 Cal</div>
+
+                  <div className="mt-4 grid grid-cols-4 gap-2 text-center">
+                    {[
+                      ["8.6 g", "Proteins"],
+                      ["33.3 g", "Carbs"],
+                      ["11.7 g", "Fats"],
+                      ["7.5 g", "Fiber"],
+                    ].map(([v, l]) => (
+                      <div key={l} className="rounded-lg bg-secondary/60 py-2">
+                        <div className="text-[11px] font-bold text-ink">{v}</div>
+                        <div className="text-[9px] text-muted-foreground">{l}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-4 flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
+                    <span className="grid h-4 w-4 place-items-center rounded-full border border-primary font-bold text-primary text-[8px]">H</span>
+                    Tracked with Snap
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Ria coach card */}
+            <div className="absolute -right-4 bottom-6 z-10 hidden rounded-2xl bg-white p-3 shadow-xl sm:block max-w-[220px]">
+              <div className="flex items-center gap-2">
+                <div className="grid h-8 w-8 place-items-center rounded-lg bg-accent/20 text-accent">✦</div>
+                <div className="font-display text-sm font-bold text-ink">Ria</div>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground leading-snug">
+                Here are some balanced breakfast options filled with proteins.
+              </p>
+            </div>
           </div>
         </div>
       </section>
