@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import healthifyLogo from "@/assets/healthify-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -17,12 +18,11 @@ export const Route = createFileRoute("/")({
 function Logo() {
   return (
     <a href="/" className="flex items-center gap-2">
-      <span className="grid h-8 w-8 place-items-center rounded-full border-2 border-primary font-display text-sm font-extrabold text-primary">
-        H
-      </span>
-      <span className="font-display text-2xl font-extrabold tracking-tight text-primary">
-        Healthify
-      </span>
+      <img
+        src={healthifyLogo.url}
+        alt="Healthify"
+        className="h-8 w-auto md:h-9"
+      />
     </a>
   );
 }
