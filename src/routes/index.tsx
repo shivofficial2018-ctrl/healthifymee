@@ -34,19 +34,16 @@ function BookMyPlanButton({
   size?: "md" | "lg";
   variant?: "solid" | "outline";
 }) {
-  const whatsappUrl =
-    "https://wa.me/918638090960?text=" +
-    encodeURIComponent("Hi, I'd like to book my plan");
+  const emailUrl =
+    "mailto:shivay160729@gmail.com?subject=" +
+    encodeURIComponent("Booking Request") +
+    "&body=" +
+    encodeURIComponent("Hi, I'd like to book my plan.");
 
   const base = variant === "outline" ? "btn-outline" : "btn-primary";
   const sizing = size === "lg" ? "text-base px-8 py-4" : "";
   return (
-    <a
-     href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${base} ${sizing}`}
-    >
+    <a href={emailUrl} className={`${base} ${sizing}`}>
       Book My Plan
     </a>
   );
@@ -306,4 +303,3 @@ function Landing() {
     </div>
   );
 }
-
