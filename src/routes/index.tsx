@@ -170,8 +170,130 @@ function Landing() {
         </div>
       </section>
 
+      {/* Why It Works */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
+              Why it works
+            </div>
+            <h2 className="font-display text-3xl font-extrabold leading-tight text-ink md:text-4xl">
+              Built for busy professionals who want results that last.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              A 12-week coaching program designed around your schedule, your food habits,
+              and your goals — with real humans and AI working together.
+            </p>
+          </div>
 
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                emoji: "🧑‍⚕️",
+                bg: "bg-[oklch(0.94_0.03_60)]",
+                title: "1:1 expert coaching",
+                body: "A certified dietitian and fitness coach guide you weekly — personalized to your body type, food preferences and lifestyle.",
+              },
+              {
+                emoji: "📱",
+                bg: "bg-[oklch(0.94_0.02_240)]",
+                title: "Fits your workday",
+                body: "Log meals in seconds with Snap, get quick check-ins on chat, and follow 20-minute home workouts that fit between meetings.",
+              },
+              {
+                emoji: "🌱",
+                bg: "bg-[oklch(0.94_0.03_155)]",
+                title: "Habits that stay",
+                body: "Small, sustainable changes across nutrition, sleep and movement — so the results you build in 12 weeks don't disappear after.",
+              },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className="rounded-3xl bg-card p-6 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.15)] ring-1 ring-border/40"
+              >
+                <div className={`mb-5 grid h-12 w-12 place-items-center rounded-2xl text-2xl ${c.bg}`}>
+                  {c.emoji}
+                </div>
+                <h3 className="font-display text-lg font-bold text-ink">{c.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* Real Customer Results */}
+      <section className="bg-hero">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
+              Real customer results
+            </div>
+            <h2 className="font-display text-3xl font-extrabold leading-tight text-ink md:text-4xl">
+              People like you, changing how they live.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              Thousands of working professionals have finished the 12-week program
+              and kept the results long after.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              { stat: "–8.4 kg", label: "Avg. weight lost in 12 weeks" },
+              { stat: "92%", label: "Stay on track past week 6" },
+              { stat: "4.6 ★", label: "Rated by 35M+ users" },
+            ].map((s) => (
+              <div
+                key={s.label}
+                className="rounded-3xl bg-card p-6 text-center shadow-[0_10px_40px_-20px_rgba(0,0,0,0.15)] ring-1 ring-border/40"
+              >
+                <div className="font-display text-4xl font-extrabold text-primary">{s.stat}</div>
+                <div className="mt-2 text-sm text-muted-foreground">{s.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {[
+              {
+                name: "Ananya R., 32",
+                role: "Product Manager, Bengaluru",
+                initial: "A",
+                bg: "bg-[oklch(0.92_0.04_25)]",
+                quote:
+                  "I was skeptical about online coaching with my schedule. My coach worked around my meetings, fixed my late dinners, and I lost 9 kg in 3 months without any crash diet.",
+              },
+              {
+                name: "Karthik M., 35",
+                role: "Software Engineer, Bengaluru",
+                initial: "K",
+                bg: "bg-[oklch(0.92_0.04_200)]",
+                quote:
+                  "The dietitian actually understood Indian food. Home workouts were 20 minutes, doable before standup. Down 7 kg and my energy through the day is completely different.",
+              },
+            ].map((t) => (
+              <figure
+                key={t.name}
+                className="rounded-3xl bg-card p-6 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.15)] ring-1 ring-border/40"
+              >
+                <blockquote className="text-base leading-relaxed text-ink">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 flex items-center gap-3">
+                  <span className={`grid h-10 w-10 place-items-center rounded-full font-display font-bold text-ink ${t.bg}`}>
+                    {t.initial}
+                  </span>
+                  <span>
+                    <span className="block font-display text-sm font-bold text-ink">{t.name}</span>
+                    <span className="block text-xs text-muted-foreground">{t.role}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 text-sm text-muted-foreground">
