@@ -41,8 +41,7 @@ function BookMyPlanButton({
   const base = variant === "outline" ? "btn-outline" : "btn-primary";
   const sizing = size === "lg" ? "text-base px-8 py-4" : "";
   return (
-    <a
-      href={whatsappUrl}
+    <a href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={`${base} ${sizing}`}
