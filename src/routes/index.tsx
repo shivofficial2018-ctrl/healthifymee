@@ -57,27 +57,23 @@ function Landing() {
       <header className="border-b border-border/60 bg-background">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Logo />
-          <BookMyPlanButton variant="outline" />
         </div>
       </header>
 
       {/* Announcement banner */}
       <div className="bg-banner">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-6 py-4 md:flex-row md:items-center">
-          <div className="flex items-start gap-3">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-primary font-display text-sm font-bold italic text-primary-foreground">
-              Rx
-            </span>
-            <div>
-              <div className="font-display font-bold text-ink">
-                Introducing HealthifyRx: Medical Weight Loss That Lasts
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Clinically backed GLP-1 medication, doctor support, and personalized coaching — all in one plan.
-              </p>
+        <div className="mx-auto flex max-w-7xl items-start gap-3 px-6 py-4">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-primary font-display text-sm font-bold italic text-primary-foreground">
+            Rx
+          </span>
+          <div>
+            <div className="font-display font-bold text-ink">
+              Introducing HealthifyRx: Medical Weight Loss That Lasts
             </div>
+            <p className="text-sm text-muted-foreground">
+              Clinically backed GLP-1 medication, doctor support, and personalized coaching — all in one plan.
+            </p>
           </div>
-          <BookMyPlanButton />
         </div>
       </div>
 
@@ -101,7 +97,7 @@ function Landing() {
               your food and your goal — powered by HealthifySnap and your AI coach Ria.
             </p>
 
-            <div className="mt-8">
+            <div id="book" className="mt-8 scroll-mt-24">
               <BookMyPlanButton size="lg" />
               <p className="mt-3 text-sm text-muted-foreground">
                 Free consultation · Trusted by 35M+ users · 4.6 ★ rated
@@ -174,18 +170,8 @@ function Landing() {
         </div>
       </section>
 
-      {/* Bottom band with single final CTA */}
-      <section id="book" className="border-t border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-14 text-center">
-          <p className="text-lg text-ink md:text-xl">
-            Redefine fitness with AI Coach Ria & HealthifySnap.{" "}
-            <span className="font-semibold">Book your plan today.</span>
-          </p>
-          <div className="mt-6 flex justify-center">
-            <BookMyPlanButton size="lg" />
-          </div>
-        </div>
-      </section>
+
+
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 text-sm text-muted-foreground">
