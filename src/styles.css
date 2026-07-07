@@ -17,8 +17,6 @@
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-dark: var(--primary-dark);
@@ -28,47 +26,51 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-cream: var(--cream);
+  --color-banner: var(--banner);
+  --color-hero: var(--hero);
   --color-ink: var(--ink);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 
-  /* HealthifyMe-inspired palette */
+  /* HealthifyMe palette — deep forest green + soft lavender hero */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.18 0.02 160);
-  --ink: oklch(0.18 0.02 160);
-  --cream: oklch(0.975 0.02 95);
+  --foreground: oklch(0.16 0.02 160);
+  --ink: oklch(0.14 0.02 160);
+
+  --hero: oklch(0.965 0.015 300);        /* soft lavender/off-white hero */
+  --banner: oklch(0.965 0.012 60);       /* warm cream banner */
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 160);
+  --card-foreground: oklch(0.16 0.02 160);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 160);
+  --popover-foreground: oklch(0.16 0.02 160);
 
-  /* Signature green */
-  --primary: oklch(0.62 0.16 155);
+  --primary: oklch(0.36 0.07 165);       /* deep forest green */
   --primary-foreground: oklch(1 0 0);
-  --primary-dark: oklch(0.42 0.12 158);
+  --primary-dark: oklch(0.28 0.06 165);
 
-  --secondary: oklch(0.96 0.02 155);
-  --secondary-foreground: oklch(0.28 0.06 158);
+  --secondary: oklch(0.96 0.015 155);
+  --secondary-foreground: oklch(0.28 0.06 165);
   --muted: oklch(0.97 0.005 150);
   --muted-foreground: oklch(0.45 0.02 160);
-  --accent: oklch(0.88 0.15 92);
-  --accent-foreground: oklch(0.25 0.05 90);
+  --accent: oklch(0.72 0.13 155);
+  --accent-foreground: oklch(1 0 0);
 
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.92 0.01 155);
-  --input: oklch(0.92 0.01 155);
-  --ring: oklch(0.62 0.16 155);
+  --border: oklch(0.9 0.01 155);
+  --input: oklch(0.9 0.01 155);
+  --ring: oklch(0.36 0.07 165);
 }
 
 @layer base {
@@ -80,38 +82,38 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
 
-@utility btn-cta {
+@utility btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   background: var(--color-primary);
   color: var(--color-primary-foreground);
-  font-weight: 700;
+  font-weight: 600;
   font-family: var(--font-display);
-  padding: 1rem 2rem;
-  border-radius: 9999px;
-  box-shadow: 0 10px 30px -8px color-mix(in oklab, var(--color-primary) 55%, transparent);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  &:hover {
-    background: var(--color-primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 16px 40px -8px color-mix(in oklab, var(--color-primary) 65%, transparent);
-  }
-  &:active { transform: translateY(0); }
+  padding: 0.9rem 1.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-primary);
+  transition: background 0.2s ease, transform 0.15s ease;
+  &:hover { background: var(--color-primary-dark); }
+  &:active { transform: translateY(1px); }
 }
 
-@utility pill {
+@utility btn-outline {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.8rem;
-  border-radius: 9999px;
-  background: var(--color-secondary);
-  color: var(--color-secondary-foreground);
-  font-size: 0.8rem;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-primary);
   font-weight: 600;
+  font-family: var(--font-display);
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid var(--color-primary);
+  transition: background 0.2s ease, color 0.2s ease;
+  &:hover { background: var(--color-primary); color: var(--color-primary-foreground); }
 }
