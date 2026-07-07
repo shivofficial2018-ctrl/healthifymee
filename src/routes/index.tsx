@@ -34,17 +34,19 @@ function BookMyPlanButton({
   size?: "md" | "lg";
   variant?: "solid" | "outline";
 }) {
-  const scroll = (e: React.MouseEvent) => {
-    e.preventDefault();
-    document
-      .getElementById("book")
-      ?.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
+  const whatsappUrl =
+    "https://wa.me/918638090960?text=" +
+    encodeURIComponent("Hi, I'd like to book my plan");
 
   const base = variant === "outline" ? "btn-outline" : "btn-primary";
   const sizing = size === "lg" ? "text-base px-8 py-4" : "";
   return (
-    <a href="#book" onClick={scroll} className={`${base} ${sizing}`}>
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${base} ${sizing}`}
+    >
       Book My Plan
     </a>
   );
